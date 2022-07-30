@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    max-width: 1920px;
+    margin: auto;
+}
+
+.under-wrapp {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.pointer {
+    cursor: pointer
+}
+
+// Utils
+@import "./utils/_colors";
+@import "./utils/_mixins";
+@import "./utils/_responsive_mixins";
+
+// Base
+@import "./base/_fonts";
+@import "./base/_typography";
+@import "./base/dropdown-select";
+
+// Components
+@import "./components/_navbar";
+
+// Pages
+@import "./pages/_posts";

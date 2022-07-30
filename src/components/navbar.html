@@ -1,0 +1,114 @@
+<nav class="navbar">
+    <div id="btn-menu" class="pointer">
+        <img src="/src/assets/images/navbar/menu.svg" />
+    </div>
+    <div class="navbar-header__wrapper">
+        <div class="navbar-header">
+            <div>
+                <img src="/src/assets/images/navbar/logo.png" />
+            </div>
+            <div class="pointer">
+                <img src="/src/assets/images/navbar/search.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar-items__wrapper" class="navbar-items__wrapper">
+        <div class="navbar-mobile-header">
+            <div>
+                <img src="/src/assets/images/navbar/logo.png" />
+            </div>
+            <div id="btn-close-navbar" class="pointer">
+                <img src="/src/assets/images/navbar/x.svg" />
+            </div>
+        </div>
+        <div class="navbar-items">
+            <div class="item">
+                <div>
+                    <p> Demos </p>
+                    <img src="/src/assets/images/navbar/chevron-down.svg" alt="">
+                </div>
+                <div class="sub sub-demo"></div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p> Post </p>
+                    <img src="/src/assets/images/navbar/chevron-down.svg" alt="">
+                </div>
+                <div class="sub sub-post"></div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p> Features </p>
+                    <img src="/src/assets/images/navbar/chevron-down.svg" alt="">
+                </div>
+                <div class="sub sub-features"></div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p> Categories </p>
+                    <img src="/src/assets/images/navbar/chevron-down.svg" alt="">
+                </div>
+                <div class="sub sub-categories"></div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p> Shop </p>
+                    <img src="/src/assets/images/navbar/chevron-down.svg" alt="">
+                </div>
+                <div class="sub sub-shop"></div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <p> Buy Now </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<script>
+    $(function () {
+        var baseUrl = "/src/components/submenues";
+
+        $(".sub-demo").load(`${baseUrl}/sub-demo.html`);
+        $(".sub-post").load(`${baseUrl}/sub-post.html`);
+        $(".sub-features").load(`${baseUrl}/sub-features.html`);
+        $(".sub-categories").load(`${baseUrl}/sub-categories.html`);
+        $(".sub-shop").load(`${baseUrl}/sub-shop.html`);
+
+        $(window).scroll(function () {
+            let navbarHeight = $(".navbar").height();
+            if ($(window).scrollTop() > 200 && $(window).width() > 768) {
+                $(".navbar").css({ "top": `-${navbarHeight}px` })
+            } else {
+                $(".navbar").css({ "top": `0` })
+            }
+        });
+
+        $("#btn-menu").click(function (e) {
+            $(".navbar-items__wrapper").toggle("fast")
+        })
+
+        $("#btn-close-navbar").click(function (e) {
+            $(".navbar-items__wrapper").hide("fast");
+        })
+
+        $(window).click(function () {
+            const btnMenu = document.getElementById("btn-menu")
+            const navbar = document.getElementById("navbar-items__wrapper")
+
+            if (!btnMenu.contains(event.target) && !navbar.contains(event.target)) {
+                $(".navbar-items__wrapper").hide("fast");
+            }
+        })
+    });
+</script>

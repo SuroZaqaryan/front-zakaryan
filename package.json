@@ -1,0 +1,13 @@
+{
+  "main": "./src/index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss src/scss/main.scss  src/public/css/main.css",
+    "watch-css": "nodemon -e scss -x npm run build-css"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}

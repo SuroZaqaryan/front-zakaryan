@@ -1,0 +1,24 @@
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+
+// Small
+@mixin phone-only {
+    @media (max-width: $sm) {
+        @content;
+    }
+}
+
+// Medium
+@mixin tablets {
+    @media (max-width: $md) {
+        @content;
+    }
+}
+
+// Large
+@mixin laptops {
+    @media (max-width: $lg) {
+        @content;
+    }
+}

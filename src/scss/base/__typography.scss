@@ -1,0 +1,59 @@
+/* Roboto Regular 400 */
+
+.rob_regular_base {
+    font-family: "Roboto Regular";
+}
+
+.roboto_reg_12 {
+    @extend .rob_regular_base;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.roboto_reg_13 {
+    @extend .rob_regular_base;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.roboto_reg_14 {
+    @extend .rob_regular_base;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+/* Roboto Medium 500 */
+
+.rob_medium_base {
+    font-family: "Roboto Medium";
+}
+
+.roboto_medium_12 {
+    @extend .rob_medium_base;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.roboto_medium_16 {
+    @extend .rob_medium_base;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+/* Roboto Bold 700 */
+
+.rob_bold_base {
+    font-family: "Roboto Bold";
+}
+
+.roboto_bold_13 {
+    @extend .rob_bold_base;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.roboto_bold_24 {
+    @extend .rob_bold_base;
+    font-size: 24px;
+    line-height: 30px;
+}

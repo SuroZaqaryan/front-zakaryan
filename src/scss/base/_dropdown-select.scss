@@ -1,0 +1,42 @@
+.sub-wrapper {
+    width: 176px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid $light-gray;
+    border-top: 0;
+
+    li {
+        @include flex('center', 'space-between');
+        @extend .roboto_reg_13;
+        border-bottom: 1px solid $light-gray;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        padding: 8px 0;
+        list-style-type: none;
+
+        span {
+            transition: transform 250ms;
+        }
+
+        &:hover {
+            color: $gray;
+
+            span {
+                transform: translateX(10px);
+            }
+        }
+
+        img {
+            transform: rotate(270deg);
+        }
+    }
+}

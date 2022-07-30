@@ -1,0 +1,91 @@
+.posts-wrapper {
+    margin: 16.156rem 0;
+
+    .posts {
+        // Я бы предпочел использовать display grid в таких случаях
+        display: flex;
+        margin-bottom: 50px;
+
+        .post {
+            flex-basis: 360px;
+
+            .post-image {
+                img {
+                    width: 360px;
+                    max-width: 100%;
+                }
+            }
+
+            .post-info {
+                .post-subtitle {
+                    margin-top: 16px;
+                    color: $primary;
+                    @extend .roboto_bold_13;
+                }
+
+                .post-title {
+                    margin: 16px 0;
+
+                    h3 {
+                        @extend .roboto_bold_24;
+                        color: $black;
+
+                        @include laptops {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .post-details {
+                    @include flex('center');
+
+                    .post-details__title {
+                        @extend .roboto_medium_12;
+                        color: $black;
+                    }
+
+                    .post-details__views,
+                    .post-details__date {
+                        @extend .roboto_reg_12;
+                        color: $gray;
+                    }
+
+                    .dot {
+                        width: 3px;
+                        height: 3px;
+                        margin: 0 5px;
+                        border-radius: 100%;
+                        background-color: $light-gray;
+                    }
+                }
+
+                .post-description {
+                    margin-top: 16px;
+
+                    p {
+                        @extend .roboto_reg_14;
+                        color: $gray;
+                    }
+                }
+            }
+        }
+
+        .post:nth-child(2) {
+            margin: 0 3rem;
+        }
+
+        @include tablets {
+            flex-direction: column;
+            max-width: 360px;
+            margin: auto;
+
+            .post {
+                margin-bottom: 3rem;
+            }
+
+            .post:nth-child(2) {
+                margin: 0;
+            }
+        }
+    }
+}
