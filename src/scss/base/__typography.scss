@@ -6,19 +6,19 @@
 
 .roboto_reg_12 {
     @extend .rob_regular_base;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 12px;
 }
 
 .roboto_reg_13 {
     @extend .rob_regular_base;
-    font-size: 13px;
+    font-size: 0.813rem;
     line-height: 13px;
 }
 
 .roboto_reg_14 {
     @extend .rob_regular_base;
-    font-size: 13px;
+    font-size: 0.875rem;
     line-height: 20px;
 }
 
@@ -30,13 +30,13 @@
 
 .roboto_medium_12 {
     @extend .rob_medium_base;
-    font-size: 12px;
+    font-size: 0.75rem;;
     line-height: 12px;
 }
 
 .roboto_medium_16 {
     @extend .rob_medium_base;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 16px;
 }
 
@@ -48,12 +48,12 @@
 
 .roboto_bold_13 {
     @extend .rob_bold_base;
-    font-size: 13px;
+    font-size: 0.813rem;
     line-height: 13px;
 }
 
 .roboto_bold_24 {
     @extend .rob_bold_base;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 30px;
 }

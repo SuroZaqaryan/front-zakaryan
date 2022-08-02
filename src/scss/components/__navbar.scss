@@ -1,133 +1,163 @@
-.navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    transition: top 0.3s;
-    background-color: #fff;
+.navbar-wrapper {
+    @include flex('', 'center');
 
-    #btn-menu {
-        display: none;
-    }
+    .navbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: top 0.3s;
+        background-color: #fff;
 
-    @include laptops {
-        #btn-menu {
+        .bg-overlay {
             position: absolute;
-            display: block;
-            margin: 10px;
-        }
-    }
-
-    .navbar-header__wrapper {
-        border: 1px solid $light-gray;
-        height: 81.5px;
-
-        @include laptops {
+            width: 100%;
+            height: 100vh;
+            background: #0000004d;
             display: none;
         }
 
-        .navbar-header {
-            @include flex('center', 'space-between');
-            @extend .under-wrapp;
-            height: 100%;
-
-            @include laptops {
-                width: 95%;
-
+        @include phone-only-min {
+            .bg-overlay {
+                display: none !important;
             }
         }
-    }
 
-    .navbar-items__wrapper {
-        border: 1px solid $light-gray;
-        height: 57px;
-        top: 0;
+        .navbar-header__wrapper {
+            border: 1px solid $light-gray;
+            height: 81.5px;
 
-        .navbar-items {
-            @include flex('center', 'center');
-            height: 100%;
-
-            .item {
-                position: relative;
-                display: flex;
+            .navbar-header {
+                @include flex('center', 'space-between');
+                @extend .under-wrapp;
                 height: 100%;
-                margin: 0 32px 0 0;
 
-                &:hover {
-                    .sub {
-                        display: block;
-                    }
-                }
-
-                >div {
-                    @include flex('center');
+                #btn-menu {
                     cursor: pointer;
 
-                    p {
-                        margin-right: 4px;
-                        @extend .roboto_medium_16;
+                    img {
+                        display: none;
                     }
                 }
 
-                .sub {
-                    position: absolute;
-                    top: 3.5rem;
-                    display: none;
+                @include phone-only {
+                    #btn-menu {
+                        img {
+                            display: block;
+                        }
+                    }
+
+                    >div:not(#btn-menu) {
+                        display: none;
+                    }
+                }
+
+                @include laptops {
+                    width: 95%;
                 }
             }
         }
 
-        .navbar-mobile-header {
-            display: none;
-        }
-
-        @include laptops {
-            display: none;
-            position: fixed;
-            width: 320px;
-            max-width: 100%;
-            position: absolute;
-            height: 100vh;
-            background-color: #fff;
-
-            .navbar-mobile-header {
-                @include flex('center', 'space-between');
-                padding: 16px 30px;
-                border-bottom: 1px solid $light-gray;
-            }
+        .navbar-items__wrapper {
+            border: 1px solid $light-gray;
+            height: 57px;
+            top: 0;
 
             .navbar-items {
-                width: 100%;
-                flex-direction: column;
-                justify-content: flex-start;
-                margin-top: 1rem;
+                @include flex('center', 'center');
+                height: 100%;
+
+                @include phone-only-min {
+                    gap: 2rem;
+                }
 
                 .item {
-                    width: 100%;
-                    margin: 0;
-                    height: auto;
-                    border-bottom: 1px solid $light-gray;
+                    position: relative;
+                    display: flex;
+                    height: 100%;
 
-                    >div {
-                        width: 100%;
-                        padding: 16px 30px;
+                    &:hover {
+                        .sub {
+                            display: block;
+                        }
                     }
 
-                    .sub-show {
-                        display: block;
+                    >div {
+                        @include flex('center');
+                        cursor: pointer;
+
+                        p {
+                            margin-right: 4px;
+                            @extend .roboto_medium_16;
+                        }
                     }
 
                     .sub {
-                        top: 3.1rem;
-                        background-color: #fff;
-                        z-index: 1;
-                        padding: 0;
+                        position: absolute;
+                        top: 3.5rem;
+                        display: none;
+                    }
+                }
+            }
 
-                        .sub-wrapper {
-                            width: auto;
+            .navbar-mobile-header {
+                display: none;
+            }
+
+
+            @include laptops-min {
+                display: block !important;
+            }
+
+            @include laptops {
+                display: none;
+                position: fixed;
+                width: 320px;
+                max-width: 100%;
+                position: absolute;
+                height: 100vh;
+                background-color: #fff;
+
+                .navbar-mobile-header {
+                    @include flex('center', 'space-between');
+                    padding: 16px 30px;
+                    border-bottom: 1px solid $light-gray;
+                }
+
+                .navbar-items {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    margin-top: 1rem;
+
+                    .item {
+                        width: 100%;
+                        margin: 0;
+                        height: auto;
+                        border-bottom: 1px solid $light-gray;
+
+                        >div {
+                            width: 100%;
+                            padding: 16px 30px;
+                        }
+
+                        .sub-show {
+                            display: block;
+                        }
+
+                        .sub {
+                            top: 3.1rem;
+                            background-color: #fff;
+                            z-index: 1;
+                            padding: 0;
+
+                            .sub-wrapper {
+                                width: auto;
+                            }
                         }
                     }
                 }
             }
+
         }
     }
 }

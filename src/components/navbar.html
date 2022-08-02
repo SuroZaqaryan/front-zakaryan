@@ -1,9 +1,10 @@
 <nav class="navbar">
-    <div id="btn-menu" class="pointer">
-        <img src="/src/assets/images/navbar/menu.svg" />
-    </div>
+    <div class="bg-overlay"></div>
     <div class="navbar-header__wrapper">
         <div class="navbar-header">
+            <div id="btn-menu">
+                <img src="/src/assets/images/navbar/menu.svg" />
+            </div>
             <div>
                 <img src="/src/assets/images/navbar/logo.png" />
             </div>
@@ -69,9 +70,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </nav>
 
 
@@ -87,28 +86,52 @@
 
         $(window).scroll(function () {
             let navbarHeight = $(".navbar").height();
-            if ($(window).scrollTop() > 200 && $(window).width() > 768) {
+            if ($(window).scrollTop() > 125 && $(window).width() > 768) {
                 $(".navbar").css({ "top": `-${navbarHeight}px` })
             } else {
                 $(".navbar").css({ "top": `0` })
             }
         });
 
+        function navbarHide() {
+            $(".navbar-items__wrapper").hide("fast").removeClass("navbar-items__active");
+            $(".bg-overlay").hide();
+        }
+
+        function navbarShow() {
+            $(".navbar-items__wrapper").toggle("fast").toggleClass("navbar-items__active");
+            $(".bg-overlay").show();
+        }
+
         $("#btn-menu").click(function (e) {
-            $(".navbar-items__wrapper").toggle("fast")
+            navbarShow();
         })
 
         $("#btn-close-navbar").click(function (e) {
-            $(".navbar-items__wrapper").hide("fast");
+            navbarHide();
         })
+
+        $(window).resize(function () {
+            if ($(this).width() > 576 && $(this).width() < 1023) {
+                navbarHide()
+            }
+        });
+
+        if ($(this).width() > 576 && $(this).width() < 1023) {
+            navbarHide()
+        }
 
         $(window).click(function () {
-            const btnMenu = document.getElementById("btn-menu")
-            const navbar = document.getElementById("navbar-items__wrapper")
+            let btnMenu = document.getElementById("btn-menu")
+            let navbar = document.getElementById("navbar-items__wrapper")
 
-            if (!btnMenu.contains(event.target) && !navbar.contains(event.target)) {
-                $(".navbar-items__wrapper").hide("fast");
+            if ($("#navbar-items__wrapper").hasClass("navbar-items__active")) {
+                if (!btnMenu.contains(event.target) && !navbar.contains(event.target)) {
+                    $(".navbar-items__wrapper").hide("fast").removeClass("navbar-items__active");
+                    $(".bg-overlay").hide();
+                }
             }
         })
+
     });
 </script>

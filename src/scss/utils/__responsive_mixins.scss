@@ -9,6 +9,12 @@ $lg: 1024px;
     }
 }
 
+@mixin phone-only-min {
+    @media (min-width: $sm) {
+        @content;
+    }
+}
+
 // Medium
 @mixin tablets {
     @media (max-width: $md) {
@@ -19,6 +25,12 @@ $lg: 1024px;
 // Large
 @mixin laptops {
     @media (max-width: $lg) {
+        @content;
+    }
+}
+
+@mixin laptops-min {
+    @media (min-width: 1025px) {
         @content;
     }
 }
