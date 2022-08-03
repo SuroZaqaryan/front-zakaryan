@@ -85,11 +85,11 @@
         $(".sub-shop").load(`${baseUrl}/sub-shop.html`);
 
         $(window).scroll(function () {
-            let navbarHeight = $(".navbar").height();
-            if ($(window).scrollTop() > 125 && $(window).width() > 768) {
-                $(".navbar").css({ "top": `-${navbarHeight}px` })
+            let navbarHeight = $(".navbar-wrapper").height();
+            if ($(window).scrollTop() > 200 && $(window).width() > 768) {
+                $(".navbar-wrapper").css({ "top": `-${navbarHeight}px` })
             } else {
-                $(".navbar").css({ "top": `0` })
+                $(".navbar-wrapper").css({ "top": `0` })
             }
         });
 

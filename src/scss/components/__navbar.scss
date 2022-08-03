@@ -1,11 +1,12 @@
 .navbar-wrapper {
     @include flex('', 'center');
-
+    position: sticky;
+    top: 0;
+    transition: top 0.3s;
     .navbar {
         width: 100%;
-        position: fixed;
-        top: 0;
-        transition: top 0.3s;
+
+        
         background-color: #fff;
 
         .bg-overlay {

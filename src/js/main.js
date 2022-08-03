@@ -1,6 +1,4 @@
 $(function () {
-    var baseUrl = "/src"
-
-    $(".navbar-wrapper").load(`${baseUrl}/components/navbar.html`);
-    $(".posts-wrapper").load(`${baseUrl}/pages/posts.html`);
+    $(".navbar-wrapper").load(`/src/components/navbar.html`);
+    $(".posts-wrapper").load(`/src/pages/posts.html`);
 });

@@ -101,12 +101,12 @@
 
 .navbar-wrapper {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  transition: top 0.3s; }
   .navbar-wrapper .navbar {
     width: 100%;
-    position: fixed;
-    top: 0;
-    transition: top 0.3s;
     background-color: #fff; }
     .navbar-wrapper .navbar .bg-overlay {
       position: absolute;
